@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int numEquivDominoPairs(vector<vector<int>>& dominoes) {
+        vector<int> freq(100, 0);
+        int ans = 0;
+
+        for(auto domino : dominoes) {
+            int a = min(domino[0], domino[1]);
+            int b = max(domino[0], domino[1]);
+
+            int num = a * 10 + b;
+
+            ans += freq[num];
+            freq[num]++;
+        }
+
+        return ans;
+    }
+};
