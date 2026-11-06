@@ -1,0 +1,25 @@
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size() != t.size()) {
+            return false;
+        }
+        vector<char> ans1;
+        vector<char> ans2;
+        for(int i = 0; i < s.size(); i++) {
+            ans1.push_back(s[i]);
+        }
+        for(int j = 0; j < t.size(); j++) {
+            ans2.push_back(t[j]);
+        }
+        sort(ans1.begin(), ans1.end());
+        sort(ans2.begin(), ans2.end());
+        for(int i = 0; i < ans1.size(); i++) {
+            if(ans1[i] != ans2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
