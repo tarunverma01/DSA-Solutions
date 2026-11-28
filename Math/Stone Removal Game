@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool canAliceWin(int n) {
+       bool flag = false;
+       int remove = 10;
+        while(remove>0 && remove<=n){
+            n-=remove;
+            remove--;
+            flag=!flag;
+        }
+        return flag;
+    }
+};
